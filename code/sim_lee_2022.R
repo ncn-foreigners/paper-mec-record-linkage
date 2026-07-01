@@ -1,6 +1,7 @@
 library(data.table)
 library(automatedRecLin)
 
+source("code/internal_lee_2022.R")
 source("code/functions_eval.R")
 
 # Read data
@@ -51,8 +52,8 @@ methods_cnonpar <- list(
 )
 
 # Define simulation
-iter <- 2
-main <- function(iterations = iter, workers = 2, seed = 123) {
+iter <- 100
+main <- function(iterations = iter, workers = 10, seed = 123) {
   
   source("code/functions_lee_2022.R", local = TRUE)
 
@@ -108,5 +109,5 @@ eval_3 <- eval_lee_2022(results_3)
 eval_table <- generate_latex_table(eval_8, eval_5, eval_3, iterations = iter)
 
 # Save results
-save(results, file = "results/results_lee_2022.RData")
+save(eval_8, eval_5, eval_3, file = "results/results_lee_2022.RData")
 writeLines(eval_table, con = "results/table_lee_2022.txt")

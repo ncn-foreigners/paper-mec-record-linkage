@@ -1,22 +1,22 @@
 \begin{table}
 
-\caption{True number of matches, average estimates, and average error rates across $2$ simulations.}
+\caption{True number of matches, average estimates, and average error rates across $100$ simulations.}
 \centering
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}c|lccccc}
 \toprule
 $n_M$ & Method & $\hat{n}_M$ & FLR & MMR & $\widehat{\text{FLR}}$ & $\widehat{\text{MMR}}$\\
 \midrule
-\multirow{3}{*}{$400$} & Binary & 379.5 & 0.0079 & 0.0587 & 0.0408 & 0.0408\\
- & Continuous parametric & 389.7 & 0.0025 & 0.0275 & 0.0113 & 0.0113\\
- & Continuous nonparametric & 383.1 & 0.0065 & 0.0475 & 0.0308 & 0.0308\\
+\multirow{3}{*}{$400$} & Binary & 382.2 & 0.0062 & 0.0505 & 0.0393 & 0.0393\\
+ & Continuous parametric & 385.5 & 0.0021 & 0.0384 & 0.0109 & 0.0109\\
+ & Continuous nonparametric & 388.4 & 0.0121 & 0.0408 & 0.0359 & 0.0359\\
 \midrule
-\multirow{3}{*}{$250$} & Binary & 233.8 & 0.0064 & 0.0720 & 0.0428 & 0.0428\\
- & Continuous parametric & 236.5 & 0.0063 & 0.0600 & 0.0107 & 0.0107\\
- & Continuous nonparametric & 239.2 & 0.0230 & 0.0660 & 0.0350 & 0.0350\\
+\multirow{3}{*}{$250$} & Binary & 237.6 & 0.0152 & 0.0643 & 0.0439 & 0.0439\\
+ & Continuous parametric & 240.2 & 0.0056 & 0.0451 & 0.0116 & 0.0116\\
+ & Continuous nonparametric & 243.7 & 0.0236 & 0.0484 & 0.0389 & 0.0389\\
 \midrule
-\multirow{3}{*}{$150$} & Binary & 137.2 & 0.0291 & 0.1133 & 0.0498 & 0.0498\\
- & Continuous parametric & 144.9 & 0.0068 & 0.0400 & 0.0177 & 0.0177\\
- & Continuous nonparametric & 144.1 & 0.0347 & 0.0733 & 0.0429 & 0.0429\\
+\multirow{3}{*}{$150$} & Binary & 141.1 & 0.0285 & 0.0866 & 0.0565 & 0.0565\\
+ & Continuous parametric & 143.7 & 0.0096 & 0.0517 & 0.0121 & 0.0121\\
+ & Continuous nonparametric & 144.1 & 0.0288 & 0.0674 & 0.0421 & 0.0421\\
 \bottomrule
 \end{tabular*}
 \end{table}
