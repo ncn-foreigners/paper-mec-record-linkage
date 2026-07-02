@@ -1,6 +1,6 @@
 \begin{table}
 
-\caption{True number of matches, average estimates, and average error rates across $100$ simulations.}
+\caption{\label{tab:tab:sim-lee-2022}True number of matches, average estimates, and average error rates across $100$ simulations.}
 \centering
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}c|lccccc}
 \toprule

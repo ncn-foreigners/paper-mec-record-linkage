@@ -100,7 +100,8 @@ generate_latex_table <- function(e_8, e_5, e_3, iterations) {
       "$\\widehat{\\text{FLR}}$",
       "$\\widehat{\\text{MMR}}$"
     ),
-    caption = paste0("True number of matches, average estimates, and average error rates across $", iterations, "$ simulations.")
+    caption = paste0("True number of matches, average estimates, and average error rates across $", iterations, "$ simulations."),
+    label = "tab:sim-lee-2022"
   )
 
   latex_table <- as.character(latex_table)
