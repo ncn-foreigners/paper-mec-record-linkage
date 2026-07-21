@@ -1,0 +1,109 @@
+{
+  "anchor_triple_changed_share": 0.0,
+  "average_changed_fields": 1.4002857142857144,
+  "blocking_upper_bound_recall": {
+    "country+date": 0.7081428571428572,
+    "date": 0.7081428571428572,
+    "fname+date": 0.48914285714285716,
+    "surname": 0.7185714285714285,
+    "surname+date": 0.493
+  },
+  "both_primary_names_changed_count": 0,
+  "both_primary_names_changed_share": 0.0,
+  "changed_field_count_distribution": {
+    "0": 377,
+    "1": 3808,
+    "2": 2451,
+    "3": 364
+  },
+  "country_changed_count": 0,
+  "duplicate_count_distribution": {
+    "1": 3000,
+    "2": 7000
+  },
+  "duplicate_rows": 7000,
+  "exact_duplicate_count": 377,
+  "exact_duplicate_share": 0.05385714285714286,
+  "field_method_counts": {
+    "date": {
+      "day_month_component_shift": 742,
+      "day_month_swap": 77,
+      "digit_typo": 1090,
+      "year_plus_minus_one": 134
+    },
+    "fname": {
+      "keyboard_typo": 910,
+      "missing": 39,
+      "near_lookup": 802,
+      "one_edit": 227
+    },
+    "region": {
+      "add_from_distribution": 1805,
+      "distribution_replacement": 19,
+      "lookup": 48,
+      "missing": 40
+    },
+    "sname": {
+      "add_from_distribution": 1861,
+      "keyboard_typo": 19,
+      "missing": 21,
+      "near_lookup": 1
+    },
+    "surname": {
+      "keyboard_typo": 1599,
+      "missing": 48,
+      "near_lookup": 111,
+      "one_edit": 212
+    }
+  },
+  "forced_exact_duplicate_base_count": 0,
+  "forced_exact_duplicate_count": 0,
+  "generated_scenario_counts": {
+    "exact": 376,
+    "primary_plus_auxiliary": 1794,
+    "primary_plus_two_auxiliary": 364,
+    "single_auxiliary": 2017,
+    "single_primary_name": 1790,
+    "two_auxiliary": 659
+  },
+  "observed_scenario_counts": {
+    "exact": 376,
+    "primary_plus_auxiliary": 1794,
+    "primary_plus_two_auxiliary": 364,
+    "single_auxiliary": 2017,
+    "single_primary_name": 1790,
+    "two_auxiliary": 659
+  },
+  "original_rows": 10000,
+  "parameters": {
+    "dgp": "medium_matchable",
+    "duplicate_share": 0.7,
+    "exact_duplicate_share": 0.0,
+    "n_records": 10000,
+    "seed": 2026
+  },
+  "per_field_change_rates": {
+    "country": 0.0,
+    "date": 0.29185714285714287,
+    "fname": 0.28214285714285714,
+    "region": 0.27314285714285713,
+    "sname": 0.27171428571428574,
+    "surname": 0.2814285714285714
+  },
+  "primary_missing_with_date_changed_count": 0,
+  "primary_names_made_missing_counts": {
+    "fname": 40,
+    "surname": 48
+  },
+  "primary_random_replacement_count": 0,
+  "rows": 17000,
+  "scenario_probabilities": {
+    "exact": 0.05,
+    "primary_plus_auxiliary": 0.25,
+    "primary_plus_two_auxiliary": 0.05,
+    "single_auxiliary": 0.3,
+    "single_primary_name": 0.25,
+    "two_auxiliary": 0.1
+  },
+  "unique_true_ids": 10000
+}

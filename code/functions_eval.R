@@ -127,3 +127,63 @@ generate_latex_table <- function(e_8, e_5, e_3, iterations) {
   latex_table
 
 }
+
+generate_latex_table_blocking <- function(results_blocking, iterations) {
+
+  eval_table <- (copy(results_blocking))
+
+  method_labels <- c(
+    "MEC (binary)",
+    "MEC (binary, $\\rho = 0.5$)",
+    "MEC (continuous)",
+    "MEC (continuous, $\\rho = 0.5$)",
+    "FS (binary)",
+    "FS (with JW similarity)"
+  )
+  eval_table[, method := method_labels]
+  eval_table[, `:=`(
+    n_M_est = sprintf("%.1f", n_M_est),
+    flr = sprintf("%.4f", flr),
+    mmr = sprintf("%.4f", mmr)
+  )]
+  rownames(eval_table) <- NULL
+
+  latex_table <- kbl(
+    x = eval_table,
+    format = "latex",
+    booktabs = TRUE,
+    escape = FALSE,
+    linesep = "",
+    align = c("l", rep("c", 3)),
+    col.names = c(
+      "Method",
+      "$\\hat{n}_M$",
+      "FLR",
+      "MMR"
+    ),
+    caption = paste0(
+      "Average estimates of the number of matches and average error rates across $",
+      iterations,
+      "$ simulations."
+    ),
+    label = "sim-blocking"
+  )
+
+  latex_table <- as.character(latex_table)
+  latex_table <- sub(
+    "\\\\begin\\{tabular\\}(\\[[^]]+\\])?\\{([^}]*)\\}",
+    "\\\\begin{tabular*}{\\\\textwidth}{@{\\\\extracolsep{\\\\fill}}\\2}",
+    latex_table
+  )
+  latex_table <- sub(
+    "\\\\end\\{tabular\\}",
+    "\\\\end{tabular*}",
+    latex_table
+  )
+
+  lines <- strsplit(latex_table, "\n", fixed = TRUE)[[1]]
+
+  latex_table <- paste(lines, collapse = "\n")
+
+  latex_table
+}
