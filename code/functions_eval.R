@@ -131,20 +131,21 @@ generate_latex_table <- function(e_8, e_5, e_3, iterations) {
 generate_latex_table_blocking <- function(results_blocking, iterations) {
 
   eval_table <- (copy(results_blocking))
+  set(eval_table, j = "candidate_pair_count", value = NULL)
 
   method_labels <- c(
-    "MEC (binary)",
+    "MEC (binary, $\\rho = 0$)",
     "MEC (binary, $\\rho = 0.5$)",
-    "MEC (continuous)",
-    "MEC (continuous, $\\rho = 0.5$)",
+    "MEC (continuous parametric, $\\rho = 0$)",
+    "MEC (continuous parametric, $\\rho = 0.5$)",
     "FS (binary)",
     "FS (with JW similarity)"
   )
   eval_table[, method := method_labels]
   eval_table[, `:=`(
-    n_M_est = sprintf("%.1f", n_M_est),
-    flr = sprintf("%.4f", flr),
-    mmr = sprintf("%.4f", mmr)
+    n_M_est = formatC(n_M_est, format = "f", digits = 1, big.mark = ","),
+    flr = formatC(flr, format = "f", digits = 4, big.mark = ","),
+    mmr = formatC(mmr, format = "f", digits = 4, big.mark = ",")
   )]
   rownames(eval_table) <- NULL
 

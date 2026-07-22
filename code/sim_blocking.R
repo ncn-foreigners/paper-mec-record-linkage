@@ -106,7 +106,8 @@ results <- rbindlist(lapply(1:iter, function(i) {
     n_M_est = n_M_est,
     flr = flr,
     mmr = mmr,
-    iter = rep(i, 6)
+    iter = rep(i, 6),
+    candidate_pair_count = rep(res_mec_c$candidate_pair_count, 6)
   )
 
 }) |> progressify() |> futurize(seed = TRUE))
@@ -115,7 +116,8 @@ plan(sequential)
 
 results_blocking <- results[, .(n_M_est = mean(n_M_est),
                                 flr = mean(flr),
-                                mmr = mean(mmr)),
+                                mmr = mean(mmr),
+                                candidate_pair_count = mean(candidate_pair_count)),
                             by = .(method)]
 
 eval_table_blocking <- generate_latex_table_blocking(
