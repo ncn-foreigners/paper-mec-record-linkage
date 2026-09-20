@@ -112,7 +112,7 @@ eval_plot <- n_M_plot(results_8, results_5, results_3)
 
 # Save results
 ggsave(
-  filename = "plots/test.pdf",
+  filename = "plots/n_M_plot.pdf",
   height = 8.5,
   width = 14
 )
