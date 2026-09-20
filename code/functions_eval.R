@@ -1,5 +1,6 @@
 library(data.table)
 library(kableExtra)
+library(ggplot2)
 
 calculate_metrics <- function(res_list) {
 
@@ -41,6 +42,93 @@ eval_lee_2022 <- function(res) {
     method = c("Binary", "Continuous parametric", "Continuous nonparametric")
   )
   cbind(method_vec, res_table)
+
+}
+
+n_M_plot <- function(results_8, results_5, results_3) {
+
+  results_b_8_list <- lapply(results_8, function(x) x[[1]])
+  results_cpar_8_list <- lapply(results_8, function(x) x[[2]])
+  results_cnonpar_8_list <- lapply(results_8, function(x) x[[3]])
+  results_b_5_list <- lapply(results_5, function(x) x[[1]])
+  results_cpar_5_list <- lapply(results_5, function(x) x[[2]])
+  results_cnonpar_5_list <- lapply(results_5, function(x) x[[3]])
+  results_b_3_list <- lapply(results_3, function(x) x[[1]])
+  results_cpar_3_list <- lapply(results_3, function(x) x[[2]])
+  results_cnonpar_3_list <- lapply(results_3, function(x) x[[3]])
+
+  n_M_s_b_8 <- unlist(lapply(results_b_8_list, function(x) {
+    x$n_M_est
+  }))
+  n_M_s_cpar_8 <- unlist(lapply(results_cpar_8_list, function(x) {
+    x$n_M_est
+  }))
+  n_M_s_cnonpar_8 <- unlist(lapply(results_cnonpar_8_list, function(x) {
+    x$n_M_est
+  }))
+
+  n_M_s_b_5 <- unlist(lapply(results_b_5_list, function(x) {
+    x$n_M_est
+  }))
+  n_M_s_cpar_5 <- unlist(lapply(results_cpar_5_list, function(x) {
+    x$n_M_est
+  }))
+  n_M_s_cnonpar_5 <- unlist(lapply(results_cnonpar_5_list, function(x) {
+    x$n_M_est
+  }))
+
+  n_M_s_b_3 <- unlist(lapply(results_b_3_list, function(x) {
+    x$n_M_est
+  }))
+  n_M_s_cpar_3 <- unlist(lapply(results_cpar_3_list, function(x) {
+    x$n_M_est
+  }))
+  n_M_s_cnonpar_3 <- unlist(lapply(results_cnonpar_3_list, function(x) {
+    x$n_M_est
+  }))
+
+  data <- data.frame(
+    n_M_est = c(
+      n_M_s_b_8,
+      n_M_s_b_5,
+      n_M_s_b_3,
+      n_M_s_cpar_8,
+      n_M_s_cpar_5,
+      n_M_s_cpar_3,
+      n_M_s_cnonpar_8,
+      n_M_s_cnonpar_5,
+      n_M_s_cnonpar_3
+    ),
+    method = rep(c("Binary", "C. param.", "C. nonparam."), each = 3 * length(n_M_s_b_8)),
+    n_M = rep(rep(c(400, 250, 150), each = length(n_M_s_b_8)), 3)
+  )
+  data$method <- factor(
+    data$method,
+    levels = c("Binary", "C. param.", "C. nonparam.")
+  )
+
+  plot <- ggplot(data, aes(x = method, y = n_M_est)) +
+    geom_violin(trim = FALSE) +
+    geom_jitter(size = 0.5, alpha = 0.6, width = 0.15) +
+    facet_wrap(
+      ~ factor(n_M, levels = sort(unique(n_M), decreasing = TRUE)),
+      labeller = as_labeller(
+        function(labels) {
+          paste0("n[M] == ", labels)
+        },
+        default = label_parsed
+      )
+    ) +
+    theme_minimal(base_size = 18) +
+    labs(
+      x = "Estimation method",
+      y = "Estimated number of matches"
+    ) +
+    theme(
+      panel.border = element_rect(color = "black", fill = NA, linewidth = 1)
+    )
+
+  plot
 
 }
 

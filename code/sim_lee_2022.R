@@ -108,6 +108,13 @@ eval_3 <- eval_lee_2022(results_3)
 
 eval_table <- generate_latex_table(eval_8, eval_5, eval_3, iterations = iter)
 
+eval_plot <- n_M_plot(results_8, results_5, results_3)
+
 # Save results
+ggsave(
+  filename = "plots/test.pdf",
+  height = 8.5,
+  width = 14
+)
 save(eval_8, eval_5, eval_3, file = "results/results_lee_2022.RData")
 writeLines(eval_table, con = "results/table_lee_2022.txt")
