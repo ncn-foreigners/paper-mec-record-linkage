@@ -1,22 +1,22 @@
 \begin{table}
 
-\caption{\label{tab:tab:sim-lee-2022}True number of matches, average estimates, and average error rates across $100$ simulations.}
+\caption{\label{tab:sim-lee-2022}True number of matches, average estimates with standard errors (SE), root mean square errors (RMSE), and average linkage error rates across $100$ simulations.}
 \centering
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}c|lccccc}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}c|lcccccc}
 \toprule
-$n_M$ & Method & $\hat{n}_M$ & FLR & MMR & $\widehat{\text{FLR}}$ & $\widehat{\text{MMR}}$\\
+$n_M$ & Method & $\hat{n}_M$ (SE) & $\text{RMSE}(\hat{n}_M)$ & $\FLR$ & $\MMR$ & $\widehat{\FLR}$ & $\widehat{\MMR}$\\
 \midrule
-\multirow{3}{*}{$400$} & Binary & 382.2 & 0.0062 & 0.0505 & 0.0393 & 0.0393\\
- & Continuous parametric & 385.5 & 0.0021 & 0.0384 & 0.0109 & 0.0109\\
- & Continuous nonparametric & 388.4 & 0.0121 & 0.0408 & 0.0359 & 0.0359\\
+\multirow{3}{*}{$400$} & Binary & 382.2 (6.5) & 19.0 & 0.0062 & 0.0505 & 0.0393 & 0.0393\\
+ & C. param. & 385.5 (6.1) & 15.7 & 0.0021 & 0.0384 & 0.0109 & 0.0109\\
+ & C. nonparam. & 388.4 (8.3) & 14.2 & 0.0121 & 0.0408 & 0.0359 & 0.0359\\
 \midrule
-\multirow{3}{*}{$250$} & Binary & 237.6 & 0.0152 & 0.0643 & 0.0439 & 0.0439\\
- & Continuous parametric & 240.2 & 0.0056 & 0.0451 & 0.0116 & 0.0116\\
- & Continuous nonparametric & 243.7 & 0.0236 & 0.0484 & 0.0389 & 0.0389\\
+\multirow{3}{*}{$250$} & Binary & 237.6 (5.2) & 13.5 & 0.0152 & 0.0643 & 0.0439 & 0.0439\\
+ & C. param. & 240.2 (4.0) & 10.6 & 0.0056 & 0.0451 & 0.0116 & 0.0116\\
+ & C. nonparam. & 243.7 (6.4) & 9.0 & 0.0236 & 0.0484 & 0.0389 & 0.0389\\
 \midrule
-\multirow{3}{*}{$150$} & Binary & 141.1 & 0.0285 & 0.0866 & 0.0565 & 0.0565\\
- & Continuous parametric & 143.7 & 0.0096 & 0.0517 & 0.0121 & 0.0121\\
- & Continuous nonparametric & 144.1 & 0.0288 & 0.0674 & 0.0421 & 0.0421\\
+\multirow{3}{*}{$150$} & Binary & 141.1 (4.8) & 10.1 & 0.0285 & 0.0866 & 0.0565 & 0.0565\\
+ & C. param. & 143.7 (3.1) & 7.0 & 0.0096 & 0.0517 & 0.0121 & 0.0121\\
+ & C. nonparam. & 144.1 (5.3) & 7.9 & 0.0288 & 0.0674 & 0.0421 & 0.0421\\
 \bottomrule
 \end{tabular*}
 \end{table}

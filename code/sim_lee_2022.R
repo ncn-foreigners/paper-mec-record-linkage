@@ -102,9 +102,9 @@ results_5 <- results$results_5
 results_3 <- results$results_3
 
 # Evaluate results
-eval_8 <- eval_lee_2022(results_8)
-eval_5 <- eval_lee_2022(results_5)
-eval_3 <- eval_lee_2022(results_3)
+eval_8 <- eval_lee_2022(results_8, 400)
+eval_5 <- eval_lee_2022(results_5, 250)
+eval_3 <- eval_lee_2022(results_3, 150)
 
 eval_table <- generate_latex_table(eval_8, eval_5, eval_3, iterations = iter)
 
@@ -117,4 +117,5 @@ ggsave(
   width = 14
 )
 save(eval_8, eval_5, eval_3, file = "results/results_lee_2022.RData")
+save(results, file = "results-raw/results_raw_lee_2022.RData")
 writeLines(eval_table, con = "results/table_lee_2022.txt")
