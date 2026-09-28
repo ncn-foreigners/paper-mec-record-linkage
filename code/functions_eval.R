@@ -241,10 +241,12 @@ generate_latex_table_blocking <- function(results_blocking, iterations) {
   method_labels <- c(
     "MEC (binary, $\\rho = 0$)",
     "MEC (binary, $\\rho = 0.5$)",
+    "MEC (binary, with JW threshold, $\\rho = 0$)",
+    "MEC (binary, with JW threshold, $\\rho = 0.5$)",
     "MEC (continuous parametric, $\\rho = 0$)",
     "MEC (continuous parametric, $\\rho = 0.5$)",
     "FS (binary)",
-    "FS (with JW similarity)"
+    "FS (with JW threshold)"
   )
   eval_table[, method := method_labels]
   eval_table[, `:=`(

@@ -153,3 +153,10 @@ perform_fs <- function(
     MMR = if ((tp + fn) == 0L) NA_real_ else fn / (tp + fn)
   )
 }
+
+jw_threshold <- function(threshold) {
+  function(x, y, t = threshold) {
+    cmp <- reclin2::cmp_jarowinkler(t)
+    as.numeric(cmp(cmp(x, y)))
+  }
+} 
